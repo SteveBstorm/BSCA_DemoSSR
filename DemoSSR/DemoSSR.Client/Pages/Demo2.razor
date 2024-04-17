@@ -1,0 +1,18 @@
+﻿@page "/demo2"
+@page "/demo2/{count:int}"
+<h3>Demo2</h3>
+
+<div style="border: black solid 1px; max-height: 200px; overflow-y : auto;">
+    @foreach (string g in items)
+    {
+        <p>@g</p>
+    }
+</div> 
+<hr />
+<div style="border: black solid 1px; max-height: 200px; overflow-y : auto;">
+   <Virtualize Context="g" Items="items">
+       <p>@g</p>
+   </Virtualize>
+</div>
+
+ 

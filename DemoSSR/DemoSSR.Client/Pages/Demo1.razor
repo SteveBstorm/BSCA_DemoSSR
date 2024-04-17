@@ -1,0 +1,12 @@
+﻿@page "/demo1"
+<h3>Demo1</h3>
+<p>@MyProp</p> 
+@* One-Way : lecture du model *@
+<p>OnChange : <input @bind:event="oninput" @bind:get="MyProp" @bind:set="(value) => MyProp = value" /></p>
+<p>OnBlur : <input @bind-value="MyProp" /></p>
+
+<button @onclick="test">click</button> 
+<Component count="@MyProp"></Component>
+
+
+<code>inputValue</code>: @MyProp

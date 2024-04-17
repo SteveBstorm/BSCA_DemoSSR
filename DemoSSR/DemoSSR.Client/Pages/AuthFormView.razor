@@ -1,0 +1,12 @@
+﻿<h3>AuthFormView</h3>
+
+<EditForm Model="MyForm" OnValidSubmit="Submit">
+    <DataAnnotationsValidator />
+    <p>User name : <InputText @bind-Value="MyForm.Username" /></p>
+    <ValidationMessage For="() => MyForm.Username" />
+    <p>@MyForm.Password. <InputText @bind-Value="MyForm.Password" DisplayName="@(MyForm.Password)"/></p>
+    <ValidationMessage For="() => MyForm.Password" />
+    <ValidationSummary />
+
+    <button type="submit" class="btn btn-outline-dark">Valider</button>
+</EditForm>

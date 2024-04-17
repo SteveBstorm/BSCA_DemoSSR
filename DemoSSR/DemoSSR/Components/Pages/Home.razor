@@ -1,0 +1,58 @@
+﻿@page "/"
+@using DemoSSR.Client.Pages
+@using Microsoft.Data.SqlClient
+@using Tools
+
+<ButtonExtract 
+    MyProperty="@Value"
+    NotifyParentComponent="Receive"
+></ButtonExtract>
+<p>Value from children : @Value2</p>
+<button @onclick="increment">++</button>
+
+@code{
+    public int Value { get; set; } = 42;
+    public int Value2 { get; set; }
+
+    public void increment() {
+        Value++;
+    }
+
+    public void Receive(int nb){
+        Value2 = nb*10;
+    }
+}
+@* @inject Bidule bid
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+<button @onclick="test">click</button>
+
+@code{
+    public void test(){
+        bid.SuperMethode();
+    }
+} *@
+
+
+@* <DemoSSR.Client.Pages.Component count="@count"></DemoSSR.Client.Pages.Component>
+
+@code{
+    string cs = @"Data Source=STEVEBSTORM\MSSQLSERVER01;Initial Catalog=TFCyber_IMDB;Integrated Security=True;Connect Timeout=60;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+    public int count { get; set; }
+    protected  override async Task OnInitializedAsync()
+    {
+        SqlConnection con = new SqlConnection(cs);
+        SqlCommand cmd = con.CreateCommand();
+        cmd.CommandText = "SELECT COUNT(*) FROM Movie";
+
+        con.Open();
+        count = (int)cmd.ExecuteScalar();
+        con.Close();
+
+    }
+    
+
+} *@

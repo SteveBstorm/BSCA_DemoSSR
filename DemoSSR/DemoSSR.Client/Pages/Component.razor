@@ -1,0 +1,24 @@
+﻿@page "/compo"
+@using Microsoft.Data.SqlClient
+<h3>Component</h3>
+<h3>nb : @count</h3>
+@code {
+
+    [Parameter]
+    public string count { get; set; }
+    // string cs = @"Data Source=STEVEBSTORM\MSSQLSERVER01;Initial Catalog=TFCyber_IMDB;Integrated Security=True;Connect Timeout=60;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+    // public int count { get; set; }
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     SqlConnection con = new SqlConnection(cs);
+    //     SqlCommand cmd = con.CreateCommand();
+    //     cmd.CommandText = "SELECT COUNT(*) FROM Movie";
+
+    //     con.Open();
+    //     count = (int)cmd.ExecuteScalar();
+    //     con.Close();
+
+    // }
+
+
+}
